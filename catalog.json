@@ -7,7 +7,7 @@
         "coreApi": 1,
         "id": "namenyx.browser-ai",
         "displayName": "Browser AI",
-        "version": "0.5.12",
+        "version": "0.5.13",
         "description": "AI responses through an authenticated DeepSeek web session in an isolated Chromium profile.",
         "author": "replshiawase",
         "repository": "https://github.com/replshiawase/nmx-modules",
@@ -52,20 +52,29 @@
         "accountCards": []
       },
       "package": {
-        "url": "https://github.com/replshiawase/nmx-modules/releases/download/v0.5.12/browser_ai.namenyxmod",
-        "size": 1150941,
-        "sha256": "445a3b5bb658fe48579b607846703b7a5f05a8e37a34e1aa8112dd10adcdfcb0",
-        "signature": "H0T3dN2ms1MgYalMz/oVQKJsedkD8WNTorU8mVLq1UTLBLFIdKgq2w4+5RTf6swLZwQaFA/M6I5BY1erL05uCA=="
+        "url": "https://github.com/replshiawase/nmx-modules/releases/download/v0.5.13/browser_ai.namenyxmod",
+        "size": 1151481,
+        "sha256": "e19b48a240bb6259cf235bfd2e758c47d08979fc754717a13653cec4b7bb7e3c",
+        "signature": "YVBfbc/lJux5TqWUxye51Io9a3poM21PuH+85GkWudGSkx2yPDOcgrWvoAGy+e88GUpkIgkyWVyumyNz/9VZAw=="
       },
-      "releaseNotes": {},
+      "releaseNotes": {
+        "en": [
+          "Browser AI no longer asks for a Twitch account when the module is merely opened. Broadcaster or bot is selected only by an explicit action in settings.",
+          "The default instruction now explicitly requires restoring the current conversation context from the active stream history."
+        ],
+        "ru": [
+          "Browser AI больше не запрашивает выбор Twitch-аккаунта при простом открытии модуля. Владелец или бот выбирается только явным действием в настройках.",
+          "Стандартная инструкция теперь явно требует восстанавливать актуальный контекст разговора по истории текущего стрима."
+        ]
+      },
       "runtimePackage": {
         "id": "namenyx.browser-ai.runtime",
         "version": "1.0.0",
         "package": {
-          "url": "https://github.com/replshiawase/nmx-modules/releases/download/v0.5.12/browser_ai_runtime.namenyxruntime",
+          "url": "https://github.com/replshiawase/nmx-modules/releases/download/v0.5.13/browser_ai_runtime.namenyxruntime",
           "size": 371292500,
           "sha256": "6420a72b72b4c5ceeaeac445ec62672469ea78f03306c0cc689211e18b0a856c",
-          "signature": "VURLdCu6EaM7/NxPpRBLsVO4VCZe0FuQEoQio61N0ChV6RpEIP97QCYDjGhenR1VTTQpKc2ul8ZsreI7VXt4Cw=="
+          "signature": "v89GfJXN/A3iRsdMo5g1eLkRQMBKxWqhmIWWX3+vZ3DRzsk4U28XJ8sOhBw61KfuokRXWVo8UQ6O0S/5i/R9Dg=="
         }
       }
     }
