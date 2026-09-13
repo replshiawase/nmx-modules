@@ -7,7 +7,7 @@
         "coreApi": 1,
         "id": "namenyx.browser-ai",
         "displayName": "Browser AI",
-        "version": "0.5.13",
+        "version": "0.5.15",
         "description": "AI responses through an authenticated DeepSeek web session in an isolated Chromium profile.",
         "author": "replshiawase",
         "repository": "https://github.com/replshiawase/nmx-modules",
@@ -46,35 +46,44 @@
         "transmittedData": [
           "AI prompts and chat messages",
           "Personalization instructions",
+          "User-edited response restrictions",
           "Selected context attachments",
           "Public Twitch stream metadata"
         ],
         "accountCards": []
       },
       "package": {
-        "url": "https://github.com/replshiawase/nmx-modules/releases/download/v0.5.13/browser_ai.namenyxmod",
-        "size": 1151481,
-        "sha256": "e19b48a240bb6259cf235bfd2e758c47d08979fc754717a13653cec4b7bb7e3c",
-        "signature": "YVBfbc/lJux5TqWUxye51Io9a3poM21PuH+85GkWudGSkx2yPDOcgrWvoAGy+e88GUpkIgkyWVyumyNz/9VZAw=="
+        "url": "https://github.com/replshiawase/nmx-modules/releases/download/v0.5.15/browser_ai.namenyxmod",
+        "size": 1182435,
+        "sha256": "a45ebf1d96dca1e6646ba45465452fd7c5f1d3924b9f5bb61eaa5627616f8f64",
+        "signature": "HaHooecwOxC0k3i+i7zM7o9PwQROEvbL97dHaGw0n2EZaK+x4X7KM7F+a+YhVQH8Nv3HisWJhhNzbt/A7wVkAg=="
       },
       "releaseNotes": {
         "en": [
-          "Browser AI no longer asks for a Twitch account when the module is merely opened. Broadcaster or bot is selected only by an explicit action in settings.",
-          "The default instruction now explicitly requires restoring the current conversation context from the active stream history."
+          "Added detailed Browser AI documentation in a separate window with Commands, AI in chat, and Settings sections, full localized examples, and copy buttons.",
+          "New personalization and AI-message settings now start empty and point to documentation examples; previously saved text remains unchanged.",
+          "Browser AI no longer replies to its own messages: the module filters outbound answer echoes before starting another job.",
+          "Added optional response safeguards backed by the editable response-restrictions.md file.",
+          "Folder buttons now select the exact restrictions, latest local dialogue, and memory files instead of the shared context directory.",
+          "Conversation reset now clears local AI authorship receipts so they cannot accumulate without matching chat messages."
         ],
         "ru": [
-          "Browser AI больше не запрашивает выбор Twitch-аккаунта при простом открытии модуля. Владелец или бот выбирается только явным действием в настройках.",
-          "Стандартная инструкция теперь явно требует восстанавливать актуальный контекст разговора по истории текущего стрима."
+          "Добавлена подробная документация Browser AI в отдельном окне с разделами «Команды», «AI в чате» и «Настройки», полными локализованными примерами и кнопками копирования.",
+          "Новые настройки персонализации и сообщения для AI теперь пусты и направляют к примерам в документации; ранее сохранённый текст не изменяется.",
+          "Browser AI больше не отвечает на собственные сообщения: модуль отсекает эхо отправленного ответа до запуска новой задачи.",
+          "Добавлена необязательная защита ответа по редактируемому файлу response-restrictions.md.",
+          "Кнопки с папкой выделяют конкретные файлы ограничений, последнего локального диалога и памяти вместо общей папки context.",
+          "Сброс диалогов теперь очищает и локальные отметки авторства AI, чтобы они не накапливались без соответствующих реплик."
         ]
       },
       "runtimePackage": {
         "id": "namenyx.browser-ai.runtime",
         "version": "1.0.0",
         "package": {
-          "url": "https://github.com/replshiawase/nmx-modules/releases/download/v0.5.13/browser_ai_runtime.namenyxruntime",
+          "url": "https://github.com/replshiawase/nmx-modules/releases/download/v0.5.15/browser_ai_runtime.namenyxruntime",
           "size": 371292500,
           "sha256": "6420a72b72b4c5ceeaeac445ec62672469ea78f03306c0cc689211e18b0a856c",
-          "signature": "v89GfJXN/A3iRsdMo5g1eLkRQMBKxWqhmIWWX3+vZ3DRzsk4U28XJ8sOhBw61KfuokRXWVo8UQ6O0S/5i/R9Dg=="
+          "signature": "4IcKmqmyPXxMvz/j2dZVgDHbdL2+b8XSzHlUYgJ6oYMYrzizaaccfk/5w3P+gf2wC8dJ9g+QM0LUSLEZhKk8Cw=="
         }
       }
     }
