@@ -7,7 +7,7 @@
         "coreApi": 1,
         "id": "namenyx.browser-ai",
         "displayName": "Browser AI",
-        "version": "0.5.15",
+        "version": "0.5.16",
         "description": "AI responses through an authenticated DeepSeek web session in an isolated Chromium profile.",
         "author": "replshiawase",
         "repository": "https://github.com/replshiawase/nmx-modules",
@@ -53,37 +53,31 @@
         "accountCards": []
       },
       "package": {
-        "url": "https://github.com/replshiawase/nmx-modules/releases/download/v0.5.15/browser_ai.namenyxmod",
-        "size": 1182435,
-        "sha256": "a45ebf1d96dca1e6646ba45465452fd7c5f1d3924b9f5bb61eaa5627616f8f64",
-        "signature": "HaHooecwOxC0k3i+i7zM7o9PwQROEvbL97dHaGw0n2EZaK+x4X7KM7F+a+YhVQH8Nv3HisWJhhNzbt/A7wVkAg=="
+        "url": "https://github.com/replshiawase/nmx-modules/releases/download/v0.5.16/browser_ai.namenyxmod",
+        "size": 1187343,
+        "sha256": "a197e8c780d187fe23d39de689b034ca45ced588dbb337baa2e09cb3b4979579",
+        "signature": "cPISDStrn21kbQCdBUYx3vqZag3Ye0a5V7SeBg5lRmzNRShY8yQFy2lXhDOdftt3dKUzVHXHB7U2TpNjD0D/Dg=="
       },
       "releaseNotes": {
         "en": [
-          "Added detailed Browser AI documentation in a separate window with Commands, AI in chat, and Settings sections, full localized examples, and copy buttons.",
-          "New personalization and AI-message settings now start empty and point to documentation examples; previously saved text remains unchanged.",
-          "Browser AI no longer replies to its own messages: the module filters outbound answer echoes before starting another job.",
-          "Added optional response safeguards backed by the editable response-restrictions.md file.",
-          "Folder buttons now select the exact restrictions, latest local dialogue, and memory files instead of the shared context directory.",
-          "Conversation reset now clears local AI authorship receipts so they cannot accumulate without matching chat messages."
+          "The module now uses Namenyx versioned configuration synchronization and ignores stale repeated settings snapshots.",
+          "Before starting AI work, the module refreshes stream state through Core and no longer depends on Announcer events.",
+          "Queued messages are checked again against the current stream state, while chat context is frozen at command time."
         ],
         "ru": [
-          "Добавлена подробная документация Browser AI в отдельном окне с разделами «Команды», «AI в чате» и «Настройки», полными локализованными примерами и кнопками копирования.",
-          "Новые настройки персонализации и сообщения для AI теперь пусты и направляют к примерам в документации; ранее сохранённый текст не изменяется.",
-          "Browser AI больше не отвечает на собственные сообщения: модуль отсекает эхо отправленного ответа до запуска новой задачи.",
-          "Добавлена необязательная защита ответа по редактируемому файлу response-restrictions.md.",
-          "Кнопки с папкой выделяют конкретные файлы ограничений, последнего локального диалога и памяти вместо общей папки context.",
-          "Сброс диалогов теперь очищает и локальные отметки авторства AI, чтобы они не накапливались без соответствующих реплик."
+          "Модуль переведён на версионированную синхронизацию конфигурации Namenyx и игнорирует устаревшие повторные снимки настроек.",
+          "Перед запуском AI модуль самостоятельно обновляет состояние стрима через Core и больше не зависит от событий Announcer.",
+          "Сообщения из очереди повторно проверяются по актуальному состоянию стрима, а снимок чат-контекста фиксируется на момент команды."
         ]
       },
       "runtimePackage": {
         "id": "namenyx.browser-ai.runtime",
         "version": "1.0.0",
         "package": {
-          "url": "https://github.com/replshiawase/nmx-modules/releases/download/v0.5.15/browser_ai_runtime.namenyxruntime",
+          "url": "https://github.com/replshiawase/nmx-modules/releases/download/v0.5.16/browser_ai_runtime.namenyxruntime",
           "size": 371292500,
           "sha256": "6420a72b72b4c5ceeaeac445ec62672469ea78f03306c0cc689211e18b0a856c",
-          "signature": "4IcKmqmyPXxMvz/j2dZVgDHbdL2+b8XSzHlUYgJ6oYMYrzizaaccfk/5w3P+gf2wC8dJ9g+QM0LUSLEZhKk8Cw=="
+          "signature": "D4d8iLjo+LM2IVs8WMlqMBZ4zTgHs8rlQTNnPyIkEbPpKXnA7yIIpCzZnVTv7fXxubaTqqIVdE8JQ+KEYxBKDw=="
         }
       }
     }
