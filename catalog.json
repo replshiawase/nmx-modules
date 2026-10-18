@@ -7,7 +7,7 @@
         "coreApi": 1,
         "id": "namenyx.browser-ai",
         "displayName": "Browser AI",
-        "version": "0.5.16",
+        "version": "0.5.18",
         "description": "AI responses through an authenticated DeepSeek web session in an isolated Chromium profile.",
         "author": "replshiawase",
         "repository": "https://github.com/replshiawase/nmx-modules",
@@ -24,6 +24,12 @@
         },
         "dependencies": [],
         "permissions": [
+          {
+            "id": "moduleActions",
+            "scopes": [],
+            "twitchAccount": null,
+            "twitchEndpoints": []
+          },
           {
             "id": "twitchChatRead",
             "scopes": [],
@@ -53,31 +59,33 @@
         "accountCards": []
       },
       "package": {
-        "url": "https://github.com/replshiawase/nmx-modules/releases/download/v0.5.16/browser_ai.namenyxmod",
-        "size": 1187343,
-        "sha256": "a197e8c780d187fe23d39de689b034ca45ced588dbb337baa2e09cb3b4979579",
-        "signature": "cPISDStrn21kbQCdBUYx3vqZag3Ye0a5V7SeBg5lRmzNRShY8yQFy2lXhDOdftt3dKUzVHXHB7U2TpNjD0D/Dg=="
+        "url": "https://github.com/replshiawase/nmx-modules/releases/download/v0.5.18/browser_ai.namenyxmod",
+        "size": 1188412,
+        "sha256": "8714c302be400babfa0b8cb45702159d6e8fa6d335452379bce2091f6f81a6fc",
+        "signature": "ytrJcMkbpalL+2goVL1jtbogqC2oyLStqqnwHeF5msjdp7r0ANblsBODDFG83KHiDcy5ZJPVfgL9NcrHA9cUCw=="
       },
       "releaseNotes": {
         "en": [
-          "The module now uses Namenyx versioned configuration synchronization and ignores stale repeated settings snapshots.",
-          "Before starting AI work, the module refreshes stream state through Core and no longer depends on Announcer events.",
-          "Queued messages are checked again against the current stream state, while chat context is frozen at command time."
+          "Added a per-channel local memory diary backed by SQLite/FTS5: retrieval uses topics, participants and dates, and selected memories retain exact source quotations.",
+          "A single DeepSeek request now produces the answer and proposes memory updates. The module validates authors and source IDs and commits changes transactionally; invalid proposals never enter memory.",
+          "Added individual context-file switches for personalization, stream metadata, chat, memory and response restrictions. Disabled files and their instructions are not submitted.",
+          "Built-in instructions now use English while requiring the answer to follow the current user's message language; legacy memory text is preserved as labelled unverified data."
         ],
         "ru": [
-          "Модуль переведён на версионированную синхронизацию конфигурации Namenyx и игнорирует устаревшие повторные снимки настроек.",
-          "Перед запуском AI модуль самостоятельно обновляет состояние стрима через Core и больше не зависит от событий Announcer.",
-          "Сообщения из очереди повторно проверяются по актуальному состоянию стрима, а снимок чат-контекста фиксируется на момент команды."
+          "Добавлен локальный дневник памяти для каждого канала на SQLite/FTS5: поиск использует тему, участников и даты, а выбранные воспоминания содержат точные исходные цитаты.",
+          "Один запрос к DeepSeek теперь одновременно формирует ответ и предлагает обновления памяти. Модуль проверяет авторов и ID источников и сохраняет изменения транзакционно; ошибочные предложения не попадают в память.",
+          "Добавлены отдельные переключатели файлов контекста: персонализации, данных стрима, чата, памяти и ограничений ответа. Отключённые файлы и инструкции к ним не отправляются.",
+          "Встроенные инструкции переведены на английский, при этом ответ всегда должен использовать язык текущего сообщения пользователя; старый текст памяти сохранён как помеченные неподтверждённые данные."
         ]
       },
       "runtimePackage": {
         "id": "namenyx.browser-ai.runtime",
         "version": "1.0.0",
         "package": {
-          "url": "https://github.com/replshiawase/nmx-modules/releases/download/v0.5.16/browser_ai_runtime.namenyxruntime",
+          "url": "https://github.com/replshiawase/nmx-modules/releases/download/v0.5.18/browser_ai_runtime.namenyxruntime",
           "size": 371292500,
           "sha256": "6420a72b72b4c5ceeaeac445ec62672469ea78f03306c0cc689211e18b0a856c",
-          "signature": "D4d8iLjo+LM2IVs8WMlqMBZ4zTgHs8rlQTNnPyIkEbPpKXnA7yIIpCzZnVTv7fXxubaTqqIVdE8JQ+KEYxBKDw=="
+          "signature": "9/3ON9YXLRh6PZQOihR17Aj9ZiUr4RWUfnyJmqjDt/8XMP2/4284vJEJYyHf1PPWdpelIEk82eqHDIMa4uThCA=="
         }
       }
     }
