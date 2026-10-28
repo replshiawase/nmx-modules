@@ -7,7 +7,7 @@
         "coreApi": 1,
         "id": "namenyx.browser-ai",
         "displayName": "Browser AI",
-        "version": "0.5.18",
+        "version": "0.5.19",
         "description": "AI responses through an authenticated DeepSeek web session in an isolated Chromium profile.",
         "author": "replshiawase",
         "repository": "https://github.com/replshiawase/nmx-modules",
@@ -29,6 +29,23 @@
             "scopes": [],
             "twitchAccount": null,
             "twitchEndpoints": []
+          },
+          {
+            "id": "twitchApi",
+            "scopes": [
+              "moderator:manage:banned_users"
+            ],
+            "twitchAccount": "userChoice",
+            "twitchEndpoints": [
+              {
+                "method": "GET",
+                "path": "/helix/users"
+              },
+              {
+                "method": "POST",
+                "path": "/helix/moderation/bans"
+              }
+            ]
           },
           {
             "id": "twitchChatRead",
@@ -59,33 +76,31 @@
         "accountCards": []
       },
       "package": {
-        "url": "https://github.com/replshiawase/nmx-modules/releases/download/v0.5.18/browser_ai.namenyxmod",
-        "size": 1188412,
-        "sha256": "8714c302be400babfa0b8cb45702159d6e8fa6d335452379bce2091f6f81a6fc",
-        "signature": "ytrJcMkbpalL+2goVL1jtbogqC2oyLStqqnwHeF5msjdp7r0ANblsBODDFG83KHiDcy5ZJPVfgL9NcrHA9cUCw=="
+        "url": "https://github.com/replshiawase/nmx-modules/releases/download/v0.5.19/browser_ai.namenyxmod",
+        "size": 1203877,
+        "sha256": "618a73541285e6ca74465b3df9eb391bedb6c1c850a607571b1e23e1b17effbc",
+        "signature": "NesEK1ic7Fpr6D9CZs+Wa6p1QUJkuwaw9w2t31t20DJGZIoTIPHAI1LgCdLTfYRjy/m7RzqyNfPty++0Y1pbDg=="
       },
       "releaseNotes": {
         "en": [
-          "Added a per-channel local memory diary backed by SQLite/FTS5: retrieval uses topics, participants and dates, and selected memories retain exact source quotations.",
-          "A single DeepSeek request now produces the answer and proposes memory updates. The module validates authors and source IDs and commits changes transactionally; invalid proposals never enter memory.",
-          "Added individual context-file switches for personalization, stream metadata, chat, memory and response restrictions. Disabled files and their instructions are not submitted.",
-          "Built-in instructions now use English while requiring the answer to follow the current user's message language; legacy memory text is preserved as labelled unverified data."
+          "Added local [timeout login seconds reason] AI reply directives: Twitch API timeouts, directive stripping before chat delivery, and result logging. Requires moderation permission approval and account selection.",
+          "Directives validate the exact login, a duration of 1–1209600 seconds and a reason up to 500 characters. API failures do not block the remaining public reply; timeouts are never retried automatically.",
+          "Accounts that already have moderator:manage:banned_users do not need Twitch reauthorization. Existing personalization, settings and local memory are preserved."
         ],
         "ru": [
-          "Добавлен локальный дневник памяти для каждого канала на SQLite/FTS5: поиск использует тему, участников и даты, а выбранные воспоминания содержат точные исходные цитаты.",
-          "Один запрос к DeepSeek теперь одновременно формирует ответ и предлагает обновления памяти. Модуль проверяет авторов и ID источников и сохраняет изменения транзакционно; ошибочные предложения не попадают в память.",
-          "Добавлены отдельные переключатели файлов контекста: персонализации, данных стрима, чата, памяти и ограничений ответа. Отключённые файлы и инструкции к ним не отправляются.",
-          "Встроенные инструкции переведены на английский, при этом ответ всегда должен использовать язык текущего сообщения пользователя; старый текст памяти сохранён как помеченные неподтверждённые данные."
+          "Добавлены локальные директивы [timeout никнейм секунды причина] в ответах ИИ: таймаут через API Twitch, удаление директивы из текста чата и журнал результата. Требуется новое разрешение модерации и выбор аккаунта.",
+          "Директивы проверяются локально: точный логин, длительность 1–1209600 секунд и причина до 500 символов. Ошибки API не мешают отправке оставшегося текста; повторных попыток таймаута нет.",
+          "Если выбранный аккаунт уже имеет moderator:manage:banned_users, повторная авторизация Twitch не нужна. Персонализация, настройки и локальная память сохраняются."
         ]
       },
       "runtimePackage": {
         "id": "namenyx.browser-ai.runtime",
         "version": "1.0.0",
         "package": {
-          "url": "https://github.com/replshiawase/nmx-modules/releases/download/v0.5.18/browser_ai_runtime.namenyxruntime",
+          "url": "https://github.com/replshiawase/nmx-modules/releases/download/v0.5.19/browser_ai_runtime.namenyxruntime",
           "size": 371292500,
           "sha256": "6420a72b72b4c5ceeaeac445ec62672469ea78f03306c0cc689211e18b0a856c",
-          "signature": "9/3ON9YXLRh6PZQOihR17Aj9ZiUr4RWUfnyJmqjDt/8XMP2/4284vJEJYyHf1PPWdpelIEk82eqHDIMa4uThCA=="
+          "signature": "LUtLgjp1aEaCDJ/gB+NlLvs8w3J+l9+O5raiwyL3HQT1sDZ60D5K9Cn6eNKCsnlnUcUXX/oSJPk35foUCUOMBA=="
         }
       }
     }
